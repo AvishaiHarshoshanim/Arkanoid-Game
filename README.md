@@ -3,7 +3,7 @@
 A fun Java remake of the classic Arkanoid game. Control the paddle to bounce the ball and break all the blocks across different levels. Features smooth animations, keyboard controls, and level selection.
 
 ---
-![Arkanoid GIF](https://github.com/user-attachments/assets/bcb6909c-f68f-41bc-bb01-1d5bb24b5f57)
+![Arkanoid GIF](https://github.com/user-attachments/assets/ea12c5bf-ef95-4fc9-8457-ec93edb79c92)
 
 ## How to Run
 
