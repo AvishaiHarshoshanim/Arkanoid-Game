@@ -1,0 +1,41 @@
+<project name="Arkanoid" default="compile" basedir=".">
+
+    <!-- Compile and runtime classpath -->
+    <path id="project.classpath">
+        <pathelement path="bin"/>
+        <pathelement path="biuoop-1.4.jar"/>
+    </path>
+
+    <!-- Compile all Java files from src/ to bin/ -->
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin" includeantruntime="false">
+            <classpath refid="project.classpath"/>
+        </javac>
+    </target>
+
+    <!-- Delete compiled classes -->
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+    <!-- Run the main class with optional command-line args -->
+    <target name="run" depends="compile">
+        <java classname="Arkanoid" fork="true">
+            <classpath refid="project.classpath"/>
+            <arg line="${args}"/>
+        </java>
+    </target>
+
+    <!-- Checkstyle configuration -->
+    <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties"
+             classpath="checkstyle-8.44-all.jar"/>
+             
+    <target name="check">
+        <checkstyle config="biuoop.xml">
+            <classpath refid="project.classpath"/>
+            <fileset dir="src" includes="**/*.java"/>
+        </checkstyle>
+    </target>
+
+</project>
